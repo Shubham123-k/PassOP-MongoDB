@@ -1,16 +1,142 @@
-# React + Vite
+# 🔐 PassOP — Password Manager (MongoDB + React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PassOP is a full-stack password manager that allows users to securely store, manage, and access credentials with a clean UI and real database integration.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+* Save website URL, username, and password
+* Edit and delete stored credentials
+* Copy credentials to clipboard with animation
+* Dark / Light mode toggle
+* Fully responsive UI
+* Persistent storage using MongoDB
+* REST API integration (Express.js)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend
+
+* React.js
+* Tailwind CSS
+* React Toastify
+* Lordicon Animations
+
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB (Native Driver)
+* dotenv
+
+---
+
+## 📂 Project Structure
+
+```
+PassOP/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Manager.jsx
+│   │   │   └── Footer.jsx
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│
+├── backend/
+│   ├── server.js
+│   ├── .env
+│   └── package.json
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/Shubham123-k/passop.git
+cd passop
+```
+
+---
+
+### 2. Backend Setup
+
+```bash
+cd backend
+npm install
+```
+
+Create `.env` file inside backend:
+
+```
+MONGO_URI=mongodb://localhost:27017/
+DB_NAME=passop
+PORT=3000
+```
+
+Start backend:
+
+```bash
+node server.js
+```
+
+---
+
+### 3. Frontend Setup
+
+```bash
+cd ../frontend
+npm install
+npm run dev
+```
+
+---
+
+## 🌐 API Endpoints
+
+| Method | Endpoint         | Description         |
+| ------ | ---------------- | ------------------- |
+| GET    | `/passwords`     | Fetch all passwords |
+| POST   | `/passwords`     | Add new password    |
+| DELETE | `/passwords/:id` | Delete password     |
+
+---
+
+## 💡 How It Works
+
+* React frontend communicates with Express backend using Fetch API
+* Backend handles requests and interacts with MongoDB
+* Password data is stored in a `passwords` collection
+* UI updates dynamically after each operation
+
+---
+
+## ⚠️ Disclaimer
+
+This project stores passwords in plain text and is intended for learning purposes only.
+Do not use it to store sensitive or real credentials.
+
+---
+
+## 🔗 GitHub
+
+👉 https://github.com/Shubham123-k
+
+---
+
+## 👨‍💻 Author
+
+Shubham K
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a star ⭐
